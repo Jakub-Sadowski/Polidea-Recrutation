@@ -1,0 +1,25 @@
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+}
+.button {
+    text-decoration: none;
+    padding: 0.5rem;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    max-height: calc(100% - 1rem);
+    &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    &__home {
+        padding: 1.5rem;
+    }
+}
