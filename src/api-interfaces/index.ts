@@ -1,2 +1,2 @@
-export * from './contributors';
+export * from './repositories';
 export * from './redux';

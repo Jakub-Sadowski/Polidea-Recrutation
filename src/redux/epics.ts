@@ -1,4 +1,4 @@
 import { combineEpics } from 'redux-observable';
-import { getContributorsEpic, setContributorsEpic, updateContributorsEpic } from './contributors/epic';
+import { getRepositoriesEpic, getRepositoryEpic } from './repositories/epic';
 
-export const rootEpic = combineEpics(getContributorsEpic, setContributorsEpic, updateContributorsEpic);
+export const rootEpic = combineEpics(getRepositoriesEpic, getRepositoryEpic);

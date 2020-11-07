@@ -13,7 +13,7 @@ export const HomePage = () => {
                 line tool, GitHub provides a Web-based graphical interface. It also provides access control and several
                 collaboration features, such as a wikis and basic task management tools for every project.
             </Typography>
-            <CustomLink label="Find repository you're looking for" destination="/" />
+            <CustomLink label="Find repository you're looking for" destination={AppRoute.repositories} />
         </Box>
     );
 };

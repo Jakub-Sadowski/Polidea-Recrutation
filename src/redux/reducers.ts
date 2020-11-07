@@ -1,4 +1,4 @@
 import { combineReducers } from 'redux';
-import { contributors } from './contributors/reducer';
+import { repositories } from './repositories/reducer';
 
-export const rootReducer = combineReducers({ contributors });
+export const rootReducer = combineReducers({ repositories });

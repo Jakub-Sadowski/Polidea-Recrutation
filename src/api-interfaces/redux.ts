@@ -1,37 +1,23 @@
 import { Action as ReduxAction } from 'redux';
-import { ContributorModel, FollowerModel, RepositoryModel } from './contributors';
+import { RepositoryModel } from './repositories';
 export interface Action<T> extends ReduxAction {
     payload: T;
 }
 
 export interface ApiRequest {
-    path: string;
+    search?: string;
+    page?: number;
+    limitPerPage?: number;
+    id?: number;
 }
 export interface StoreModel {
-    contributors: ContributorStoreModel;
+    repositories: RepositoryStore;
 }
 
-export interface ContributorStoreModel {
-    data: ContributorModel[];
-    list: ContributorModel[];
-}
-interface GraphResponse<T> {
-    edges: T[];
-}
-
-export interface GraphModel {
-    data: {
-        node: {
-            id: string;
-            login: string;
-            avatarUrl: string;
-            bio: string;
-            followers?: GraphResponse<FollowerModel>;
-            repositories?: GraphResponse<RepositoryModel>;
-            gists?: GraphResponse<RepositoryModel>;
-        };
-    };
-}
-export interface RepositoryResponseModel {
-    data: RepositoryModel;
+export interface RepositoryStore {
+    page: number | undefined;
+    list: RepositoryModel[];
+    total_count: number | undefined;
+    search: string | undefined;
+    limitPerPage: number;
 }
