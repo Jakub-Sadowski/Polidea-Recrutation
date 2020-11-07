@@ -14,12 +14,15 @@ button {
     border-radius: 10px;
     font-size: 1.5rem;
     font-weight: 700;
-    max-height: calc(100% - 1rem);
+    margin-top: 1rem;
     &:hover {
         transform: scale(1.1);
         cursor: pointer;
     }
     &__home {
         padding: 1.5rem;
+    }
+    @media (min-width: 780px) {
+        margin-top: 0;
     }
 }

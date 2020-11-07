@@ -8,7 +8,7 @@ const initialState = {
     page: undefined,
     total_count: undefined,
     search: undefined,
-    limitPerPage: 8,
+    limitPerPage: 4,
 };
 export const repositories: Reducer<RepositoryStore, Action<ResponseModel>> = (state = initialState, action) => {
     switch (action.type) {

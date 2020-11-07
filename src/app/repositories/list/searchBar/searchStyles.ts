@@ -40,6 +40,8 @@ export const useStyles = makeStyles(() =>
             display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
+            marginBottom: '1rem',
+            marginTop: '1rem',
             '& input': {
                 color: '#ffffff',
             },
