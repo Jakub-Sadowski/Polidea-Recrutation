@@ -26,6 +26,9 @@ export interface UserModel {
     type: string;
     site_admin: boolean;
 }
+export interface LanguagesModel {
+    [key: string]: string;
+}
 
 export interface RepositoryModel {
     id: number;

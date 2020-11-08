@@ -22,13 +22,16 @@ export const repositories: Reducer<RepositoryStore, Action<ResponseModel>> = (st
             };
         }
         case FETCH_REPOSITORY: {
-            const id = state.list.indexOf(action.payload.items[0]);
-            if (id === -1)
+            const el = state.list.find((repo) => repo.id === action.payload.items[0].id);
+
+            if (el === undefined) {
                 return {
                     ...state,
                     list: [...state.list, ...action.payload.items],
                 };
-            else {
+            } else {
+                const id = state.list.indexOf(el);
+                console.log(id);
                 const arr = state.list;
                 arr[id] = action.payload.items[0];
                 return {

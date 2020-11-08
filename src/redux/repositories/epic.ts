@@ -31,12 +31,6 @@ export const getRepositoryEpic = (action$: ActionsObservable<Action<ApiRequest>>
                 fetchData<RepositoryModel>({
                     path: `repositories/${action.payload.id}`,
                 }),
-            ).pipe(
-                map((response) => {
-                    const arr: ResponseModel = { items: [] };
-                    arr.items.push(response);
-                    getRepository(arr);
-                }),
-            ),
+            ).pipe(map((response) => getRepository({ items: [response] }))),
         ),
     );
