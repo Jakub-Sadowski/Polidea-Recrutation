@@ -48,6 +48,7 @@ export const useDetailsStyles = makeStyles(() =>
             '&:hover': {
                 transform: 'scale(1.1)',
                 cursor: 'pointer',
+                trasform: 'translateY(-10px)',
             },
         },
     }),

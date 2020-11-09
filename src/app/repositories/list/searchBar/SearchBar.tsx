@@ -1,16 +1,7 @@
-import {
-    FormControl,
-    IconButton,
-    InputAdornment,
-    InputLabel,
-    OutlinedInput,
-    TextField,
-    Typography,
-} from '@material-ui/core';
+import { FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useStyles } from './searchStyles';
-import _ from 'lodash';
 import { RepositoryStore, StoreModel } from '../../../../api-interfaces';
 import { CustomButton } from '../../../../utillities/customLink/CustomButton';
 import { TRY_FETCH_REPOSITORIES } from '../../../../redux/repositories/types';

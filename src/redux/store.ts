@@ -6,6 +6,5 @@ import { rootEpic } from './epics';
 import { Action, ApiRequest, ResponseModel } from '../api-interfaces';
 
 const epicMiddleware = createEpicMiddleware<Action<ApiRequest>, Action<ResponseModel>, void, any>();
-
 export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(epicMiddleware)));
 epicMiddleware.run(rootEpic);

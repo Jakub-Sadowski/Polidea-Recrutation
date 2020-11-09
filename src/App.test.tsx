@@ -1,9 +1,19 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import { AppProviders } from './providers/AppProviders';
 import { App } from './App';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
 
-test('renders learn react link', () => {
-    render(<App />);
-    const linkElement = screen.getByText(/learn react/i);
-    expect(linkElement).toBeInTheDocument();
+describe('App component', () => {
+    it('renders app', () => {
+        const { getByText } = render(
+            <Provider store={store}>
+                <AppProviders>
+                    <App />
+                </AppProviders>
+            </Provider>,
+        );
+        expect(getByText("Find repository you're looking for")).toBeInTheDocument();
+    });
 });

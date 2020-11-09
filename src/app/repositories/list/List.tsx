@@ -13,15 +13,12 @@ export const List = () => {
         (state) => state.repositories,
     );
     const [pageCount, setPageCount] = useState<number>(1);
-    const maxPages = total_count !== undefined ? Math.ceil(total_count / limitPerPage) : 10;
+    const maxPages = total_count !== undefined ? Math.floor(1000 / limitPerPage) : 10; // api is giving access only to first 1000 records
     useEffect(() => {
         if (page !== undefined) setPageCount(page);
     }, [page]);
     const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
-        if (value === maxPages && total_count !== undefined) {
-            const count = total_count - (maxPages - 1) * limitPerPage;
-            dispatch({ type: TRY_FETCH_REPOSITORIES, payload: { page: value, search, limitPerPage: count } });
-        } else dispatch({ type: TRY_FETCH_REPOSITORIES, payload: { page: value, search, limitPerPage } });
+        dispatch({ type: TRY_FETCH_REPOSITORIES, payload: { page: value, search, limitPerPage } });
     };
 
     return (
