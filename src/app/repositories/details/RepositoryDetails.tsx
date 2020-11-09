@@ -5,9 +5,9 @@ import { useParams } from 'react-router-dom';
 import { fetchData } from '../../../api';
 import { LanguagesModel, RepositoryModel, RepositoryStore, StoreModel, UserModel } from '../../../api-interfaces';
 import { TRY_FETCH_REPOSITORY } from '../../../redux/repositories/types';
-import { CustomLink } from '../../../utillities/customLink/CustomLink';
 import { SelectedIcon } from '../../../utillities/icon/SelectedIcon';
 import { useDetailsStyles } from './details';
+
 export const RepositoryDetails = () => {
     const dispatch = useDispatch();
     const detailsClasses = useDetailsStyles();

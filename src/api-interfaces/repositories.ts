@@ -105,4 +105,5 @@ export interface RepositoryModel {
     watchers: number;
     default_branch: string;
     score: number;
+    contributors?: UserModel[];
 }
